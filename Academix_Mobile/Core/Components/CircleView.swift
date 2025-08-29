@@ -9,10 +9,17 @@ import SwiftUI
 
 struct CircleView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Circle()
+            .stroke(Color.theme.creamColor, lineWidth: 10)
+            .overlay(
+                Image("img")
+                    .resizable()
+                    .scaledToFill()
+                    .clipShape(Circle())
+            )
+            .frame(width: 161, height: 161)
     }
 }
-
 #Preview {
     CircleView()
 }
